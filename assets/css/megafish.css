@@ -1,0 +1,115 @@
+/*** ESSENTIAL STYLES ***/
+.sf-menu {
+  position: relative;
+}
+.sf-menu, .sf-menu li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sf-menu li:not(.sf-mega-parent) {
+	position: relative;
+}
+
+.sf-menu ul,
+.sf-menu .sf-mega {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+}
+.sf-menu .sf-mega ul {
+	position:static;
+	display:block;
+}
+.sf-menu > li {
+  float: left;
+}
+.sf-menu li:hover > .sf-mega,
+.sf-menu li.sfHover > .sf-mega {
+  display: block;
+}
+
+.sf-menu > li > a {
+  display: block;
+  position: relative;
+}
+
+
+/*** DEMO SKIN ***/
+.sf-menu {
+  float: left;
+  width: 100%;
+}
+.sf-menu li:not(.sf-mega-parent) ul {
+	min-width: 12em; *width: 12em;
+}
+.sf-menu .sf-mega {
+	width: 100%;
+}
+
+.sf-menu li:not(.sf-mega-parent) ul,
+.sf-menu .sf-mega  {
+	-moz-box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+}
+
+.sf-menu > li > a {
+  font-size:12px; text-transform:uppercase; text-decoration: none; color: #111; font-weight:bold; line-height:50px; zoom: 1; /* IE7 */
+}
+.sf-menu > li > a > i { margin-right:5px; }
+.sf-menu > li {
+  -webkit-transition: background .2s;
+  transition: background .2s; margin-right:15px;
+}
+.sf-menu > li:hover,
+.sf-menu > li.sfHover {
+  -webkit-transition: none;
+  transition: none;
+}
+.sf-menu > li.current > a,
+.sf-menu > li:hover > a,
+.sf-menu > li.sfHover > a{ color: #e74c3c; }
+
+.sf-menu li:not(.sf-mega-parent) li a {
+	background-color: #fff; color:#222; display:block; font-size:13px;
+	text-transform: none; font-weight: normal;
+	line-height:40px;height:40px;
+	padding:0 10px;	border-bottom:1px solid #ddd;
+}
+
+.sf-menu li:not(.sf-mega-parent) li a:hover {
+	background-color: #f9f9f9;
+}
+
+/*** mega menu dropdown ***/
+.sf-mega {
+  background-color: #fff;
+  padding: 20px; padding-bottom:0;
+  width: 100%;
+}
+
+.sf-mega .sf-mega-list a{ color: #111; font-weight: bold;}
+.sf-mega .sf-mega-list a:hover{ color: #888;}
+
+
+/*** arrows (for all except IE7) **/
+.sf-arrows .sf-with-ul {
+  padding-right: 1em;
+  *padding-right: 0; /* no CSS arrows for IE7 (lack pseudo-elements) */
+}
+/* styling for both css and generated arrows */
+.sf-arrows .sf-with-ul:after {
+ content: '+';
+	position: absolute;
+	top: 0px;
+	right: 0;
+	color:#666
+}
+.sf-arrows > li > .sf-with-ul:focus:after,
+.sf-arrows > li:hover > .sf-with-ul:after,
+.sf-arrows > .sfHover > .sf-with-ul:after {
+  border-top-color: white; /* IE8 fallback colour */
+}
